@@ -91,6 +91,14 @@ console.log(myMap.size);        // 3
 myMap.delete(1);
 console.log(myMap.size); // 2
 
+// Menambahkan elemen baru ke Map
+myMap.set('age', 30);
+console.log(myMap);
+
+// Menghapus elemen dari Map
+myMap.delete('name');
+console.log(myMap);
+
 // Metode Map Lainnya:
 console.log(myMap.keys());     // Iterator semua key dalam Map
 console.log(myMap.values());   // Iterator semua nilai dalam Map
@@ -119,6 +127,14 @@ mySet.add(5);               // Tambah elemen
 mySet.delete(2);            // Hapus elemen
 console.log(mySet.has(3));  // true
 console.log(mySet.size);    // 4
+
+// Menambahkan elemen baru ke Set
+mySet.add(10);
+console.log(mySet);
+
+// Menghapus elemen dari Set
+mySet.delete(1);
+console.log(mySet);
 
 // Metode Set Lainnya:
 console.log([...mySet]); // Konversi Set ke Array
