@@ -1,6 +1,7 @@
 // ----------------------------------
 // Array
 // ----------------------------------
+console.group("Array Operations");
 
 const fruits = ['apple', 'banana', 'orange'];
 const fruits_copy = Array.from(fruits);
@@ -40,9 +41,11 @@ console.log(numbers.find(num => num > 2)); // Cari elemen pertama yang memenuhi 
 console.log(numbers.findIndex(num => num > 2)); // Cari index pertama dari elemen yang memenuhi kondisi
 console.log(numbers.flat());            // Ratakan array bersarang (nested array)
 
+console.groupEnd();
 // ----------------------------------
 // Object
 // ----------------------------------
+console.group("Object Operations");
 
 const person = {
     'first name': 'Alice',
@@ -59,10 +62,11 @@ console.log(name);  // 'Alice'
 console.log(age);   // 25
 console.log(city);  // 'Jakarta'
 
-// Menambahkan dan Menghapus Properti
+// Menambahkan Properti
 person.job = 'Engineer';
 console.log(person);
 
+// Menghapus Properti
 delete person.city;
 console.log(person);
 
@@ -75,9 +79,11 @@ console.log(Object.hasOwn(person, 'age'));  // Cek apakah objek memiliki propert
 console.log(Object.entries(person));  // Ambil array pasangan key-value dari objek
 console.log(Object.values(person));   // Ambil array nilai dari objek
 
+console.groupEnd();
 // ----------------------------------
 // Map (Key-Value Pair)
 // ----------------------------------
+console.group("Map Operations");
 
 const myMap = new Map();
 myMap.set('name', 'Alice');
@@ -116,9 +122,11 @@ myMap.forEach((value, key) => {
 myMap.clear(); // Hapus semua elemen dalam Map
 console.log(myMap.size); // 0
 
+console.groupEnd();
 // ----------------------------------
 // Set (Kumpulan Nilai Unik)
 // ----------------------------------
+console.group("Set Operations");
 
 let mySet = new Set([1, 2, 3, 3, 4]);
 console.log(mySet);         // Set { 1, 2, 3, 4 }
@@ -144,3 +152,5 @@ console.log(mySet.entries()); // Ambil pasangan key-value (unik untuk Set)
 
 mySet.clear(); // Hapus semua elemen dalam Set
 console.log(mySet.size); // 0
+
+console.groupEnd();

@@ -1,6 +1,7 @@
 // ----------------------------------
 // String
 // ----------------------------------
+console.group("String");
 
 const text = "Hello, World!";
 
@@ -16,9 +17,11 @@ console.log(text.split(", "));   // ["Hello", "World!"]
 console.log(text.trim());          // "Hello, World!" (hapus spasi di awal/akhir)
 console.log(text.slice(0, 5));     // "Hello" (potong string)
 
+console.groupEnd();
 // ----------------------------------
 // Number
 // ----------------------------------
+console.group("Number");
 
 const num = 42.567;
 
@@ -32,11 +35,14 @@ console.log(Math.sqrt(16));         // 4 (akar kuadrat)
 console.log(Math.pow(2, 3));        // 8 (pangkat 2^3)
 console.log(Math.random());         // Bilangan random antara 0 - 1
 
+console.groupEnd();
 // ----------------------------------
 // Date
 // ----------------------------------
+console.group("Date");
 
 const now = new Date();
+
 console.log(now.toDateString());   // "Tue Feb 14 2025" (format tanggal)
 console.log(now.toISOString());    // "2025-02-14T10:00:00.000Z"
 console.log(now.getFullYear());    // 2025
@@ -48,9 +54,11 @@ console.log(now.getMinutes());     // 30 (menit)
 console.log(now.getSeconds());     // 15 (detik)
 console.log(Date.now());           // Timestamp saat ini
 
+console.groupEnd();
 // ----------------------------------
 // Function Methods
 // ----------------------------------
+console.group("Function");
 
 function greet(name) {
     console.log(`Hello, ${name}`);
@@ -61,9 +69,11 @@ greet.apply(null, ["Bob"]); // "Hello, Bob"
 const greetBob = greet.bind(null, "Bob");
 greetBob(); // "Hello, Bob"
 
+console.groupEnd();
 // ----------------------------------
 // Error Handling
 // ----------------------------------
+console.group("Error Handling");
 
 try {
     throw new Error("Something went wrong");
@@ -71,9 +81,11 @@ try {
     console.error(error.message); // "Something went wrong"
 }
 
+console.groupEnd();
 // ----------------------------------
 // DOM Manipulation
 // ----------------------------------
+console.group("DOM Manipulation");
 
 document.addEventListener("DOMContentLoaded", () => {
     const heading = document.querySelector("h1");
@@ -82,27 +94,33 @@ document.addEventListener("DOMContentLoaded", () => {
     heading.addEventListener("click", () => alert("Clicked!"));
 });
 
+console.groupEnd();
 // ----------------------------------
 // Local Storage & Session Storage
 // ----------------------------------
+console.group("Local Storage & Session Storage");
 
 localStorage.setItem("username", "Alice");
 console.log(localStorage.getItem("username")); // "Alice"
 sessionStorage.setItem("sessionKey", "12345");
 console.log(sessionStorage.getItem("sessionKey")); // "12345"
 
+console.groupEnd();
 // ----------------------------------
 // Fetch API & AJAX
 // ----------------------------------
+console.group("Fetch API & AJAX");
 
 fetch("https://jsonplaceholder.typicode.com/todos/1")
     .then(response => response.json())
     .then(data => console.log(data))
     .catch(error => console.error("Error:", error));
 
+console.groupEnd();
 // ----------------------------------
 // JSON
 // ----------------------------------
+console.group("JSON");
 
 const obj = { name: "Alice", age: 25 };
 const jsonString = JSON.stringify(obj);
@@ -111,11 +129,15 @@ console.log(jsonString); // "{\"name\":\"Alice\",\"age\":25}"
 const parsedObj = JSON.parse(jsonString);
 console.log(parsedObj);  // { name: "Alice", age: 25 }
 
+console.groupEnd();
 // ----------------------------------
 // Regex (Regular Expressions)
 // ----------------------------------
+console.group("REGEX");
 
 const regex = /hello/i;  // Case-insensitive regex
 console.log(regex.test("Hello World")); // true (cocok dengan "Hello")
 console.log("Hello World".match(regex)); // ["Hello", index: 0, input: "Hello World"]
 console.log("Hello World".replace(regex, "Hi")); // "Hi World"
+
+console.groupEnd();

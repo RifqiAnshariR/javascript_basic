@@ -10,6 +10,7 @@ console.log(diameter);
 // ----------------------------------
 // Primitive Data Types
 // ----------------------------------
+console.group("Primitive Data Types");
 
 // String
 const text = "Hello, World!";
@@ -39,9 +40,11 @@ console.log(typeof emptyValue); // "object" (JavaScript quirk)
 const uniqueId = Symbol("id");
 console.log(typeof uniqueId); // "symbol"
 
+console.groupEnd();
 // ----------------------------------
 // Non-Primitive Data Types
 // ----------------------------------
+console.group("Non-Primitive Data Types");
 
 // Object
 const person = { name: "Alice", age: 25 };
@@ -65,9 +68,11 @@ console.log(typeof now); // "object"
 const regex = /hello/i;
 console.log(typeof regex); // "object"
 
+console.groupEnd();
 // ----------------------------------
-// Type Conversion
+// Type Conversion/Casting
 // ----------------------------------
+console.group("Casting");
 
 // String to Number
 console.log(Number("123")); // 123
@@ -94,10 +99,14 @@ console.log(JSON.stringify(obj)); // "{"key":"value"}"
 const jsonString = '{"key":"value"}';
 console.log(JSON.parse(jsonString)); // { key: "value" }
 
+console.groupEnd();
 // ----------------------------------
 // Checking Data Types
 // ----------------------------------
+console.group("Check Data Types");
 
 console.log(Array.isArray(numbers)); // true (cek apakah array)
 console.log(person instanceof Object); // true (cek apakah instance dari Object)
 console.log(now instanceof Date); // true (cek apakah instance dari Date)
+
+console.groupEnd();

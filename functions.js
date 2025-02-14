@@ -1,6 +1,7 @@
 // ----------------------------------
 // Function Basics
 // ----------------------------------
+console.group("Funtion Basics");
 
 // Function Declaration
 function greet(name) {
@@ -37,9 +38,11 @@ function multiply(a, b, c) {
 const nums = [2, 3, 4];
 console.log(multiply(...nums)); // 24
 
+console.groupEnd();
 // ----------------------------------
 // Function Methods
 // ----------------------------------
+console.group("Funtion Methods");
 
 // Call Method
 function introduce(language) {
@@ -55,9 +58,11 @@ introduce.apply(person, ["Python"]); // "Alice is learning Python."
 const introduceAlice = introduce.bind(person);
 introduceAlice("C++"); // "Alice is learning C++."
 
+console.groupEnd();
 // ----------------------------------
 // Closures
 // ----------------------------------
+console.group("Closures");
 
 function outerFunction(outerValue) {
     return function innerFunction(innerValue) {
@@ -67,9 +72,11 @@ function outerFunction(outerValue) {
 const closureExample = outerFunction("Hello");
 console.log(closureExample("World")); // "Outer: Hello, Inner: World"
 
+console.groupEnd();
 // ----------------------------------
 // Higher-Order Functions
 // ----------------------------------
+console.group("High-Order Functions");
 
 function doMath(operation, a, b) {
     return operation(a, b);
@@ -79,9 +86,11 @@ const subtract = (x, y) => x - y;
 console.log(doMath(add, 5, 3)); // 8
 console.log(doMath(subtract, 5, 3)); // 2
 
+console.groupEnd();
 // ----------------------------------
 // Recursion
 // ----------------------------------
+console.group("Recursion");
 
 function factorial(n) {
     if (n === 0) return 1;
@@ -92,14 +101,17 @@ console.log(factorial(5)); // 120
 // ----------------------------------
 // Immediately Invoked Function Expression (IIFE)
 // ----------------------------------
+console.group("Immediately Invoked Function Expression");
 
 (function() {
     console.log("This runs immediately!");
 })();
 
+console.groupEnd();
 // ----------------------------------
 // Generator Functions
 // ----------------------------------
+console.group("Generator Functions");
 
 function* generatorExample() {
     yield 1;
@@ -111,9 +123,11 @@ console.log(gen.next().value); // 1
 console.log(gen.next().value); // 2
 console.log(gen.next().value); // 3
 
+console.groupEnd();
 // ----------------------------------
 // Async Functions
 // ----------------------------------
+console.group("Async Functions");
 
 async function fetchData() {
     return "Data fetched!";
@@ -127,11 +141,15 @@ async function delayedMessage() {
 }
 delayedMessage();
 
+console.groupEnd();
 // ----------------------------------
 // Function Composition
 // ----------------------------------
+console.group("Function Composition");
 
 const double = x => x * 2;
 const square = x => x * x;
 const composedFunction = x => square(double(x));
 console.log(composedFunction(3)); // 36
+
+console.groupEnd();
