@@ -1,85 +1,104 @@
 // ----------------------------------
-// Operators in JavaScript
+// Object-Oriented Programming (OOP) in JavaScript
 // ----------------------------------
 
-// Arithmetic Operators
-let a = 10, b = 3;
-console.log(a + b);  // 13 (Addition)
-console.log(a - b);  // 7  (Subtraction)
-console.log(a * b);  // 30 (Multiplication)
-console.log(a / b);  // 3.3333 (Division)
-console.log(a % b);  // 1 (Modulus - Remainder)
-console.log(a ** b); // 1000 (Exponentiation)
+// 1. Object Literals
+const person = {
+    name: "Alice",
+    age: 25,
+    greet: function() {
+        console.log(`Hello, my name is ${this.name}.`);
+    }
+};
+person.greet(); // "Hello, my name is Alice."
 
-// Assignment Operators
-let x = 5;
-x += 3;  // x = x + 3 → 8
-x -= 2;  // x = x - 2 → 6
-x *= 2;  // x = x * 2 → 12
-x /= 3;  // x = x / 3 → 4
-x %= 3;  // x = x % 3 → 1
-x **= 2; // x = x ** 2 → 1
-
-// Comparison Operators
-console.log(10 == "10");  // true (equal, type conversion allowed)
-console.log(10 === "10"); // false (strict equal, type conversion NOT allowed)
-console.log(10 != "10");  // false (not equal, type conversion allowed)
-console.log(10 !== "10"); // true (strict not equal, type conversion NOT allowed)
-console.log(5 > 3);  // true (greater than)
-console.log(5 < 3);  // false (less than)
-console.log(5 >= 5); // true (greater than or equal to)
-console.log(3 <= 5); // true (less than or equal to)
-
-// Logical Operators
-let p = true, q = false;
-console.log(p && q); // false (AND)
-console.log(p || q); // true (OR)
-console.log(!p);     // false (NOT)
-
-// Bitwise Operators
-let m = 5, n = 1;
-console.log(m & n);  // 1 (Bitwise AND)
-console.log(m | n);  // 5 (Bitwise OR)
-console.log(m ^ n);  // 4 (Bitwise XOR)
-console.log(~m);     // -6 (Bitwise NOT)
-console.log(m << 1); // 10 (Left Shift)
-console.log(m >> 1); // 2 (Right Shift)
-console.log(m >>> 1); // 2 (Unsigned Right Shift)
-
-// Ternary Operator (Conditional Operator)
-let age = 20;
-let status = (age >= 18) ? "Adult" : "Minor";
-console.log(status); // "Adult"
-
-// Type Operators
-console.log(typeof 42);        // "number"
-console.log(typeof "Hello");   // "string"
-console.log(typeof true);      // "boolean"
-console.log(typeof {});        // "object"
-console.log(typeof undefined); // "undefined"
-console.log(typeof null);      // "object" (special case in JS)
-
-// Instanceof Operator
-class Person {}
-let person1 = new Person();
-console.log(person1 instanceof Person); // true
-
-// Spread Operator
-let arr1 = [1, 2, 3];
-let arr2 = [...arr1, 4, 5];
-console.log(arr2); // [1, 2, 3, 4, 5]
-
-// Rest Operator
-function sum(...nums) {
-    return nums.reduce((acc, val) => acc + val, 0);
+// 2. Constructor Function
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    this.greet = function() {
+        console.log(`Hello, my name is ${this.name}.`);
+    };
 }
-console.log(sum(1, 2, 3, 4)); // 10
+const bob = new Person("Bob", 30);
+bob.greet(); // "Hello, my name is Bob."
 
-// Nullish Coalescing Operator (??)
-let value = null;
-console.log(value ?? "Default Value"); // "Default Value"
+// 3. ES6 Class Syntax
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    speak() {
+        console.log(`${this.name} makes a noise.`);
+    }
+}
+const dog = new Animal("Dog");
+dog.speak(); // "Dog makes a noise."
 
-// Optional Chaining Operator (?.)
-const user = { profile: { name: "Alice" } };
-console.log(user.profile?.name); // "Alice"
-console.log(user.address?.city); // undefined
+// 4. Encapsulation (Private Fields & Methods)
+class CoffeeMachine {
+    #temperature;
+    constructor(waterAmount) {
+        this.waterAmount = waterAmount;
+        this.#temperature = 90;
+    }
+    get temperature() {
+        return this.#temperature;
+    }
+    set temperature(value) {
+        console.log("Temperature is private and cannot be changed.");
+    }
+}
+const coffee = new CoffeeMachine(10);
+console.log(coffee.temperature); // 90
+coffee.temperature = 100; // "Temperature is private and cannot be changed."
+
+// 5. Inheritance (Extending Classes)
+class Dog extends Animal {
+    speak() {
+        console.log(`${this.name} barks.`);
+    }
+}
+const myDog = new Dog("Buddy");
+myDog.speak(); // "Buddy barks."
+
+// 6. Polymorphism (Method Overriding)
+class Cat extends Animal {
+    speak() {
+        console.log(`${this.name} meows.`);
+    }
+}
+const myCat = new Cat("Whiskers");
+myCat.speak(); // "Whiskers meows."
+
+// 7. Static Methods
+class MathUtils {
+    static add(a, b) {
+        return a + b;
+    }
+}
+console.log(MathUtils.add(5, 3)); // 8
+
+// 8. Object Composition (Instead of Inheritance)
+const canFly = {
+    fly() {
+        console.log("I can fly!");
+    }
+};
+const canSwim = {
+    swim() {
+        console.log("I can swim!");
+    }
+};
+class Bird {
+    constructor(name) {
+        this.name = name;
+    }
+}
+Object.assign(Bird.prototype, canFly);
+const eagle = new Bird("Eagle");
+eagle.fly(); // "I can fly!"
+
+// ----------------------------------
+// End of OOP in JavaScript
+// ----------------------------------
