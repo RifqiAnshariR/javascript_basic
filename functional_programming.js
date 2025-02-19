@@ -29,8 +29,3 @@ console.log(factorial(5)); // Output: 120
 const numbers = [1, 2, 3];
 const doubledNumbers = numbers.map(n => n * 2); // Creates a new array instead of modifying existing one
 console.log(doubledNumbers); // Output: [2, 4, 6]
-
-/**
- * Functional Programming helps create structured, predictable, and testable code
- * by leveraging pure functions, high-order functions, recursion, and immutability.
- */
