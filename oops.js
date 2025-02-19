@@ -1,8 +1,6 @@
 // ----------------------------------
-// Object-Oriented Programming (OOP) in JavaScript
-// ----------------------------------
-
 // 1. Object Literals
+// ----------------------------------
 const person = {
     name: "Alice",
     age: 25,
@@ -12,7 +10,9 @@ const person = {
 };
 person.greet(); // "Hello, my name is Alice."
 
+// ----------------------------------
 // 2. Constructor Function
+// ----------------------------------
 function Person(name, age) {
     this.name = name;
     this.age = age;
@@ -23,7 +23,9 @@ function Person(name, age) {
 const bob = new Person("Bob", 30);
 bob.greet(); // "Hello, my name is Bob."
 
+// ----------------------------------
 // 3. ES6 Class Syntax
+// ----------------------------------
 class Animal {
     constructor(name) {
         this.name = name;
@@ -35,7 +37,9 @@ class Animal {
 const dog = new Animal("Dog");
 dog.speak(); // "Dog makes a noise."
 
+// ----------------------------------
 // 4. Encapsulation (Private Fields & Methods)
+// ----------------------------------
 class CoffeeMachine {
     #temperature;
     constructor(waterAmount) {
@@ -53,7 +57,9 @@ const coffee = new CoffeeMachine(10);
 console.log(coffee.temperature); // 90
 coffee.temperature = 100; // "Temperature is private and cannot be changed."
 
+// ----------------------------------
 // 5. Inheritance (Extending Classes)
+// ----------------------------------
 class Dog extends Animal {
     speak() {
         console.log(`${this.name} barks.`);
@@ -62,7 +68,9 @@ class Dog extends Animal {
 const myDog = new Dog("Buddy");
 myDog.speak(); // "Buddy barks."
 
+// ----------------------------------
 // 6. Polymorphism (Method Overriding)
+// ----------------------------------
 class Cat extends Animal {
     speak() {
         console.log(`${this.name} meows.`);
@@ -71,7 +79,9 @@ class Cat extends Animal {
 const myCat = new Cat("Whiskers");
 myCat.speak(); // "Whiskers meows."
 
+// ----------------------------------
 // 7. Static Methods
+// ----------------------------------
 class MathUtils {
     static add(a, b) {
         return a + b;
@@ -79,7 +89,9 @@ class MathUtils {
 }
 console.log(MathUtils.add(5, 3)); // 8
 
+// ----------------------------------
 // 8. Object Composition (Instead of Inheritance)
+// ----------------------------------
 const canFly = {
     fly() {
         console.log("I can fly!");
@@ -98,7 +110,3 @@ class Bird {
 Object.assign(Bird.prototype, canFly);
 const eagle = new Bird("Eagle");
 eagle.fly(); // "I can fly!"
-
-// ----------------------------------
-// End of OOP in JavaScript
-// ----------------------------------
